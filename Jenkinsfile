@@ -30,4 +30,23 @@ pipeline{
             }
         }
     }
+
+post{
+        success{
+            script{
+                emailext from: 'itsakku09@gmail.com',
+                to: 'itsakku09@gmail.com',
+                body: 'Build success for Django Notes App',
+                subject: 'Build success for Django Notes App'
+            }
+        }
+        failure{
+            script{
+                emailext from: 'itsakku09@gmail.com',
+                to: 'itsakku09@gmail.com',
+                body: 'Build Failed for Django Notes App',
+                subject: 'Build Failed for Django Notes App'
+            }
+        }
+    }
 }
